@@ -1,0 +1,399 @@
+/* 
+  Este archivo contiene estilos específicos para la página principal
+  Los estilos globales están en globals.css
+*/
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+/* Estilos específicos para el dashboard */
+.dashboardLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+}
+
+.dashboardLoadingContent {
+  text-align: center;
+  color: var(--light);
+}
+
+.dashboardLoadingSpinner {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Transiciones para la carga de componentes */
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ajustes para móviles */
+.mobileOnly {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileOnly {
+    display: block;
+  }
+  
+  .desktopOnly {
+    display: none;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+  }
+}
+
+/* Efectos de hover para elementos interactivos */
+.interactiveItem {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interactiveItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--darkest);
+  color: var(--light);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Estilos para los botones */
+.primaryButton {
+  background: linear-gradient(135deg, var(--accent) 0%, #0077b6 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(135deg, #00c8ff 0%, #0096c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6);
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent);
+}
+
+/* Estilos para las tarjetas */
+.cardContainer {
+  background: rgba(22, 33, 62, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.3);
+}
+
+/* Estilos para los formularios */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--light);
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* Estilos para los mensajes */
+.alert {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.alertSuccess {
+  background: rgba(46, 204, 113, 0.2);
+  border-left: 4px solid var(--positive);
+}
+
+.alertError {
+  background: rgba(231, 76, 60, 0.2);
+  border-left: 4px solid var(--negative);
+}
+
+.alertWarning {
+  background: rgba(243, 156, 18, 0.2);
+  border-left: 4px solid var(--neutral);
+}
+
+.alertIcon {
+  font-size: 1.5rem;
+}
+
+.alertSuccess .alertIcon {
+  color: var(--positive);
+}
+
+.alertError .alertIcon {
+  color: var(--negative);
+}
+
+.alertWarning .alertIcon {
+  color: var(--neutral);
+}
+
+/* Estilos para los tabs */
+.tabsContainer {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--accent);
+}
+
+.tabActive {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Estilos para las tablas */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Estilos para los badges */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgePrimary {
+  background: rgba(0, 180, 216, 0.2);
+  color: var(--accent);
+}
+
+.badgeSuccess {
+  background: rgba(46, 204, 113, 0.2);
+  color: var(--positive);
+}
+
+.badgeWarning {
+  background: rgba(243, 156, 18, 0.2);
+  color: var(--neutral);
+}
+
+.badgeDanger {
+  background: rgba(231, 76, 60, 0.2);
+  color: var(--negative);
+}
